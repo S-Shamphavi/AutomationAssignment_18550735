@@ -25,6 +25,9 @@ public class LoginPageTest extends TestBase{
 	}
 	
 	
+	
+	
+	
 	@BeforeMethod
 	public void seup() {
 		initialization();
