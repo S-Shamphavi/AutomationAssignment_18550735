@@ -27,8 +27,8 @@ public class ReportsPageTest extends TestBase{
 	public void seup() {
 		initialization();
 		loginPage = new LoginPage();
-		homePage = loginPage.loging(properties.getProperty("username"), properties.getProperty("password"));
-		reportsPage= homePage.clickOnReportsLink();
+		homePage = loginPage.login(properties.getProperty("username"), properties.getProperty("password"));
+		reportsPage= homePage.clickOnReportsMenu();
 		
 	}
 	
@@ -45,7 +45,7 @@ public class ReportsPageTest extends TestBase{
 	@Test(priority = 2)
 	public void reportsListLinkTest() {
 		
-	reportsPage.clickOnReport();
+	reportsPage.clickOnLeaveReport();
 
 		
 	}

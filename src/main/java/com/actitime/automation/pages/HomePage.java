@@ -11,28 +11,33 @@ import net.bytebuddy.asm.Advice.Return;
 public class HomePage extends TestBase {
 
 	
-
-		
-		@FindBy(xpath = "//a[@class='content reports']") 
-		WebElement reportsLink;
-		
-		@FindBy(xpath = "//a[@class='content users']") 
-		WebElement usersLink;
-		
-		@FindBy(xpath = "//a[@class='content selected tt']") 
-		WebElement timeSheetLink;
-		
 		@FindBy(xpath = "//div[@id='logo_aT']") 
 		WebElement actitimeLogo;
 		
-		@FindBy(xpath = "//div[@class='weekApprovalStatusControlOuterContainer']") 
-		WebElement approvalStatus;
+		@FindBy(xpath = "//a[@class='content reports']") 
+		WebElement reportsMenu;
 		
-		@FindBy(xpath = "//div[@class='tt-table ']") 
-		WebElement timeSheetTable;
+		@FindBy(xpath = "//a[@class='content users']") 
+		WebElement usersMenu;
+		
+		@FindBy(xpath = "//a[@class='content selected tt']") 
+		WebElement timeTrackMenu;
+		
+		@FindBy(xpath = "//a[@class='content tasks']") 
+		WebElement tasksMenu;
+		
+		@FindBy(xpath = "//a[@href='/administration/approve_tt.do']") 
+		WebElement approveTTmenu;
+		
+		@FindBy(xpath = "(//*[@class='selectionCell'])[4]") 
+		WebElement checkBox;
+		
+		@FindBy(xpath = "//*[@id='approveButton']") 
+		WebElement approveButton;
+		
+		@FindBy(xpath = "//*[@id='rejectButton']") 
+		WebElement rejectButton;
 	
-		
-		
 		public HomePage() {
 			
 			PageFactory.initElements(driver, this);
@@ -45,32 +50,38 @@ public class HomePage extends TestBase {
 		}
 		
 		
-		public UsersPage clickOnUsersLink() {
-			usersLink.click();
+		public UsersPage clickOnUsersMenu() {
+			usersMenu.click();
 			return new UsersPage();
 		}
 		
 		
-        public ReportsPage clickOnReportsLink() {
-	         reportsLink.click();
+        public ReportsPage clickOnReportsMenu() {
+	         reportsMenu.click();
 	         return new ReportsPage();
 		}
         
         
-        public HomePage clickOnTimeSheetLink() {
-	         timeSheetLink.click();
+        public HomePage clickOnTimeTrackMenu() {
+	         timeTrackMenu.click();
 	         return new HomePage();
 		}
-        
-        
-        public Boolean timeSheetTableTest() {
-			return timeSheetTable.isDisplayed();
+        public TasksPage clickOnTasksMenu() {
+			tasksMenu.click();
+			return new TasksPage();
 		}
-        
-        
-        
-    	public Boolean validateApprovalStatus() {
-			return approvalStatus.isDisplayed();
+        public boolean clickOnApproveTT() {
+			approveTTmenu.click();
+			checkBox.click();
+			return approveButton.isEnabled();
+			
 		}
+        public boolean clickOnRejectTT() {
+     			approveTTmenu.click();
+     			checkBox.click();
+     			return rejectButton.isEnabled();
+     			
+     		}
+ 
 	
 }

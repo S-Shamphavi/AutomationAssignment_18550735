@@ -11,10 +11,10 @@
    <test name = "Testcases">
       <classes>
          <class name = "com.actitime.automation.testcases.HomePageTest" />
-         <class name="com.actitime.automation.testcases.LogonPageTest" />         
-         <class name="com.actitime.automation.testcases.UsersPageTest"></class>
-         <class name="com.actitime.automation.testcases.ReportsPageTest"></class>
-         <class name="com.actitime.automation.testcases.TasksPageTest"></class>
+         <class name="com.actitime.automation.testcases.LoginPageTest" />         
+         <class name="com.actitime.automation.testcases.UsersPageTest"/>
+         <class name="com.actitime.automation.testcases.ReportsPageTest"/>
+         <class name="com.actitime.automation.testcases.TasksPageTest"/>
       </classes>
    </test>
 

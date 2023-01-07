@@ -25,7 +25,7 @@ public class HomePageTest extends TestBase{
 	public void seup() {
 		initialization();
 		loginPage = new LoginPage();
-		homePage = loginPage.loging(properties.getProperty("username"), properties.getProperty("password"));
+		homePage = loginPage.login(properties.getProperty("username"), properties.getProperty("password"));
 		
 		
 	}
@@ -42,36 +42,32 @@ public class HomePageTest extends TestBase{
 	@Test(priority = 2)
 	public void usersPageUserLinkTest() {
 		
-	homePage.clickOnUsersLink();
+	homePage.clickOnUsersMenu();
 
 		
 	}
 	
 	@Test(priority = 3)
-	public void homePageTimeSheetLinkTest() {
+	public void homePageTimeTrackLinkTest() {
 		
-	homePage.clickOnTimeSheetLink();
+	homePage.clickOnTimeTrackMenu();
 
 		
 	}
-	
-	@Test(priority = 4)
-	public void timSheetTableTest() {
+	@Test(priority = 1)
+	public void approveTimeTrackTest() {
 		
-	boolean flag= homePage.timeSheetTableTest();
-	Assert.assertTrue(flag,"Cannot find the time sheet");
-		
-	}
-	
-	@Test(priority = 5)
-	public void timSheetApprovalTest() {
-		
-	boolean flag= homePage.validateApprovalStatus();
-	Assert.assertTrue(flag,"Cannot find the time sheet approval/rejection option");
+	homePage.clickOnApproveTT();
+
 		
 	}
-	
-	
+	@Test(priority = 1)
+	public void rejectTimeTaskTest() {
+		
+	homePage.clickOnRejectTT();
+
+		
+	}
 	@AfterMethod
 	public void tearDown() {
 		

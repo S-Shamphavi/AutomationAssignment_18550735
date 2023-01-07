@@ -14,8 +14,8 @@ import com.actitime.automation.util.TestUtil;
 public class LoginPageTest extends TestBase{
 
 	LoginPage loginPage;
-	HomePage homePage;
-	String sheetName = "Users";
+	HomePage homePage; 
+	String sheetName = "UserTable";
 	TestUtil testUtil;
 	
 	
@@ -59,7 +59,7 @@ public class LoginPageTest extends TestBase{
 	public void LoginTest(String userName, String password) {
 		
 		
-		homePage = loginPage.loging(userName, password);
+		homePage = loginPage.login(userName, password);
 	}
 	
 	

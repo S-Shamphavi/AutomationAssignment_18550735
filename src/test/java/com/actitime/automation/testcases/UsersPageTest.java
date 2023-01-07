@@ -25,8 +25,8 @@ public class UsersPageTest extends TestBase{
 	public void seup() {
 		initialization();
 		loginPage = new LoginPage();
-		homePage = loginPage.loging(properties.getProperty("username"), properties.getProperty("password"));
-		usersPage= homePage.clickOnUsersLink();
+		homePage = loginPage.login(properties.getProperty("username"), properties.getProperty("password"));
+		usersPage= homePage.clickOnUsersMenu();
 		
 	}
 	
@@ -38,10 +38,16 @@ public class UsersPageTest extends TestBase{
 	Assert.assertTrue(flag,"Cannot find the users list");
 		
 	}
-	
-	
 	@Test(priority = 2)
-	public void userListLinkTest() {
+	public void addUserTest() {
+		
+	usersPage.clickOnAddUser();
+
+		
+	}
+	
+	@Test(priority = 3)
+	public void userLinkTest() {
 		
 	usersPage.clickOnUser();
 

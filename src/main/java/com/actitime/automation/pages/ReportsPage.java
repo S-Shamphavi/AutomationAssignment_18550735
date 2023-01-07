@@ -16,10 +16,10 @@ public class ReportsPage extends TestBase  {
 			WebElement reportsList;
 			
 			@FindBy(xpath = "//table[@id='reportConfig_119']")
-			WebElement reportLink;
+			WebElement leaveChart;
 			
-			@FindBy(xpath = "//div[@class='lightbox lightboxWithWhiteContent pdfPreviewLightbox createChartMode ancestorEventsEmitter verticalBar']")//leaves report details
-			WebElement reportDetailsSlide;
+			@FindBy(xpath = "//div[@id='createChartLightbox']")
+			WebElement leaveChartView;
 			
 			
 			
@@ -38,9 +38,9 @@ public class ReportsPage extends TestBase  {
 			
 			
 			
-			public boolean clickOnReport() {
-				reportLink.click();
-				return reportDetailsSlide.isDisplayed();
+			public boolean clickOnLeaveReport() {
+				leaveChart.click();
+				return leaveChartView.isDisplayed();
 			}
 			
 

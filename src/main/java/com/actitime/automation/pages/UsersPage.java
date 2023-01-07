@@ -12,13 +12,19 @@ public class UsersPage extends TestBase  {
 	
 	
 			@FindBy(xpath = "//div[@class='userListPage']")
-			WebElement usersTable;
+			WebElement usersList;
 			
-			@FindBy(xpath = "//div[@class='userNameContent clickable']")
+			@FindBy(xpath = "(//table[@class='userNameContainer'])[1]")
 			WebElement userLink;
 			
-			@FindBy(xpath = "//div[@class='edit_user_sliding_panel sliding_panel components_panelContainer']")//user details
-			WebElement userDetailsSlide;
+			@FindBy(xpath = "//div[@class='edit_user_sliding_panel sliding_panel components_panelContainer']")
+			WebElement userDetailsPanel;
+			
+			@FindBy(xpath = "//div[@class='components_button withPlusIcon']")
+			WebElement addUserButton;
+			
+			@FindBy(xpath = "//div[@class='create_user_sliding_panel sliding_panel components_panelContainer']")
+			WebElement addUserPanel;
 			
 						
 			public UsersPage() {	
@@ -28,14 +34,18 @@ public class UsersPage extends TestBase  {
 			
 			
 			public Boolean validateUsersList() {
-				return usersTable.isDisplayed();
+				return usersList.isDisplayed();
 			}
 			
+			public boolean clickOnAddUser() {
+				userLink.click();
+				return userDetailsPanel.isDisplayed();
+			}
 			
 			
 			public boolean clickOnUser() {
 				userLink.click();
-				return userDetailsSlide.isDisplayed();
+				return addUserPanel.isDisplayed();
 			}
 			
 

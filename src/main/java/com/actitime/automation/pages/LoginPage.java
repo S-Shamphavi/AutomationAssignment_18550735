@@ -27,12 +27,6 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//*[@id='loginButton']")
 	WebElement loginButton;
 	
-	@FindBy(xpath = "//input[@name='remember']")
-	WebElement keepmeLoggedinCheckBox;
-	
-	@FindBy(xpath = "//a[@id='toPasswordRecoveryPageLink']")
-	WebElement forgotYourPasswordLink;
-	
 	
 	@FindBy(xpath = "//div[@class='atLogoImg']")
 	WebElement actiTimeLogo;
@@ -55,7 +49,7 @@ public class LoginPage extends TestBase {
 		
 	}
 	
-	public HomePage loging(String user, String pwd) {
+	public HomePage login(String user, String pwd) {
 		
 		userName.sendKeys(user);
 		passWord.sendKeys(pwd);
